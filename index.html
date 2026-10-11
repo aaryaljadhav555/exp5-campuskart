@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CampusKart</title>
+  <!-- Tailwind CSS (already added for you) -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-indigo-50 text-slate-900">
+
+  <!-- TODO Build It 3: Navigation Bar
+       Add classes to <nav>, <h1> and the <div> of links -->
+  <nav class="bg-gray-900 text-white px-6 py-4 flex justify-between items-center">
+  <a href="#" class="text-2xl font-bold">Campus<span class="text-orange-400">Kart</span></a>
+  <div class="flex gap-6">
+    <a href="#" class="hover:text-orange-400">Shop</a>
+    <a href="#" class="hover:text-orange-400">Cart (0)</a>
+  </div>
+</nav>
+
+  <!-- TODO Build It 5: Responsive Sale Banner
+       Add classes to <section>, <h2>, <p> and <img>.
+       Remember: text-center on phone, md:text-left and md:justify-between on laptop -->
+  <section class="flex flex-col items-center justify-between gap-6 bg-blue-200 px-6 py-10 text-center md:flex-row md:text-left">
+    <div>
+      <h2 class="ml-4 text-5xl font-bold text-indigo-950">College Sale</h2>
+      <p class="ml-4 md:ml-6 mt-2 text-lg text-slate-600">Up to 50% off on bags, books and more</p>
+      <!-- TODO Build It 5: style this link like the Add to Cart button,
+           but in amber: bg-amber-400 hover:bg-amber-300 text-indigo-950
+           (add "inline-block mt-6" too) -->
+      <a href="#products"
+        class="inline-block ml-4 md:ml-6 rounded-lg bg-amber-400 px-6 py-3 font-bold text-indigo-950 hover:bg-amber-300">
+        Shop Now</a>
+    </div>
+    <img src="https://placehold.co/300x300/fbbf24/1e1b4b?text=50%25+OFF" alt="Sale">
+  </section>
+
+  <!-- GIVEN: Why Shop With Us (already styled, nothing to do) -->
+  <section class="grid grid-cols-3 gap-4 text-center px-6 py-8">
+    <div class="bg-white p-4 rounded-lg shadow-sm">
+      <p class="text-2xl font-bold text-indigo-600">Free</p>
+      <p class="text-slate-500">Delivery</p>
+    </div>
+    <div class="bg-white p-4 rounded-lg shadow-sm">
+      <p class="text-2xl font-bold text-indigo-600">7-Day</p>
+      <p class="text-slate-500">Returns</p>
+    </div>
+    <div class="bg-white p-4 rounded-lg shadow-sm">
+      <p class="text-2xl font-bold text-indigo-600">COD</p>
+      <p class="text-slate-500">Available</p>
+    </div>
+  </section>
+
+  <!-- TODO Build It 4: Responsive Product Grid
+       Add classes to this <section> -->
+  <section id="products" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 p-6">
+
+    <!-- TODO Build It 1 + 2: Product Card
+         Style this FIRST card: <div>, <img>, <h3>, <p>, <span>, <button>.
+         Then copy the same classes to the other 3 cards. -->
+    <div class="overflow-hidden rounded-xl bg-white p-4 shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl">
+      <img src="backpack.jpg" alt="Backpack"
+      class="h-48 w-full rounded-lg object-contain">
+      <h3 class="mt-4 text-lg font-bold text-indigo-950">Backpack</h3>
+      <p class="mt-4 text-lg font-bold text-indigo-950">Rs. 799 <span  class="text-slate-400 line-through ml-1">1299</span></p>
+      <button onclick="addToCart()"
+              class="w-full mt-3 bg-orange-500 hover:bg-orange-700  text-white text-xs py-2 rounded">Add to Cart</button>
+    </div>
+
+    <div class="overflow-hidden rounded-xl bg-white p-4 shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl">
+      <img src="notebook.jpg" alt="Notebooks"
+      class="h-48 w-full rounded-lg object-contain">
+      <h3 class="mt-4 text-lg font-bold text-indigo-950">Notebook Set</h3>
+      <p class="mt-4 text-lg font-bold text-indigo-950">Rs. 199 <span  class="text-slate-400 line-through ml-1">299</span></p>
+      <button onclick="addToCart()"
+              class="w-full mt-3 bg-orange-500 hover:bg-orange-700  text-white text-xs py-2 rounded">Add to Cart</button>
+    </div>
+
+    <div class="overflow-hidden rounded-xl bg-white p-4 shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl">
+      <img src="bottle.jpg" alt="Water Bottle"
+       class="h-48 w-full rounded-lg object-contain">
+      <h3 class="mt-4 text-lg font-bold text-indigo-950">Water Bottle</h3>
+      <p class="mt-4 text-lg font-bold text-indigo-950">Rs. 349 <span  class="text-slate-400 line-through ml-1">499</span></p>
+      <button onclick="addToCart()"
+              class="w-full mt-3 bg-orange-500 hover:bg-orange-700  text-white text-xs py-2 rounded">Add to Cart</button>
+    </div>
+
+    <div class="overflow-hidden rounded-xl bg-white p-4 shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl">
+      <img src="earbuds.jpg" alt="Earphones"
+       class="h-48 w-full rounded-lg object-contain">
+      <h3 class="mt-4 text-lg font-bold text-indigo-950">Earphones</h3>
+      <p class="mt-4 text-lg font-bold text-indigo-950" >Rs. 599 <span  class="text-slate-400 line-through ml-1">999</span></p>
+      <button onclick="addToCart()"
+              class="w-full mt-3 bg-orange-500 hover:bg-orange-700  text-white text-xs py-2 rounded">Add to Cart</button>
+    </div>
+
+     <div class="overflow-hidden rounded-xl bg-white p-4 shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl">
+      <img src="box.jpg" alt="Geometry Box"
+       class="h-48 w-full rounded-lg object-contain">
+      <h3 class="mt-4 text-lg font-bold text-indigo-950">Geometry Box</h3>
+      <p class="mt-4 text-lg font-bold text-indigo-950" >Rs. 149 <span  class="text-slate-400 line-through ml-1">220</span></p>
+      <button onclick="addToCart()"
+              class="w-full mt-3 bg-orange-500 hover:bg-orange-700  text-white text-xs py-2 rounded">Add to Cart</button>
+    </div>
+
+    <div class="overflow-hidden rounded-xl bg-white p-4 shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl">
+      <img src="lamp.jpg" alt="Table Lamp"
+       class="h-48 w-full rounded-lg object-contain">
+      <h3 class="mt-4 text-lg font-bold text-indigo-950">Table Lamp</h3>
+      <p class="mt-4 text-lg font-bold text-indigo-950" >Rs. 499 <span  class="text-slate-400 line-through ml-1">1200</span></p>
+      <button onclick="addToCart()"
+              class="w-full mt-3 bg-orange-500 hover:bg-orange-700  text-white text-xs py-2 rounded">Add to Cart</button>
+    </div>
+
+    <div class="overflow-hidden rounded-xl bg-white p-4 shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl">
+      <img src="table.jpg" alt="Study Table"
+       class="h-48 w-full rounded-lg object-contain">
+      <h3 class="mt-4 text-lg font-bold text-indigo-950">Study Table</h3>
+      <p class="mt-4 text-lg font-bold text-indigo-950" >Rs. 699 <span  class="text-slate-400 line-through ml-1">1500</span></p>
+      <button onclick="addToCart()"
+              class="w-full mt-3 bg-orange-500 hover:bg-orange-700 text-white text-xs py-2 rounded">Add to Cart</button>
+    </div>
+
+
+    <div class="overflow-hidden rounded-xl bg-white p-4 shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl">
+      <img src="calculator.jpg" alt="Scientific Calculator"
+       class="h-48 w-full rounded-lg object-contain">
+      <h3 class="mt-4 text-lg font-bold text-indigo-950">Scientific Calculator</h3>
+      <p class="mt-4 text-lg font-bold text-indigo-950" >Rs. 199 <span  class="text-slate-400 line-through ml-1">350</span></p>
+      <button onclick="addToCart()"
+              class="w-full mt-3 bg-orange-500 hover:bg-orange-700  text-white text-xs py-2 rounded">Add to Cart</button>
+    </div>
+
+
+
+
+  </section>
+
+  <!-- GIVEN: Footer (already styled, nothing to do) -->
+  <footer class="bg-indigo-950 text-indigo-200 py-6 text-center">
+    <p>&copy; 2026 CampusKart</p>
+    <div class="flex justify-center gap-6 mt-2">
+      <a href="#" class="hover:text-amber-400">About</a>
+      <a href="#" class="hover:text-amber-400">Contact</a>
+    </div>
+  </footer>
+
+</body>
+</html>
